@@ -21,10 +21,10 @@ type Greeting struct {
 }
 
 func (g *Greeting) SetGreeting(presentTime, pHour, pMinute uint, greeting string) {
-	g.presentTime = presentTime
-	g.pHour = pHour
-	g.pMinute = pMinute
+	g.presentTime = uint(time.Now().Hour())
 	g.greeting = greeting
+	g.pHour = uint(time.Now().Hour())
+	g.pMinute = uint(time.Now().Minute())
 	g.greetHour()
 	g.greet_H_M()
 }
@@ -35,8 +35,6 @@ func (g *Greeting) GetGreeting() (uint, string) {
 
 // greet by hour
 func (g *Greeting) greetHour() (uint, string) {
-	g.presentTime = uint(time.Now().Hour())
-
 	switch {
 	case g.presentTime >= 6 || g.presentTime <= 9:
 		g.greeting = "good moring"
@@ -52,9 +50,6 @@ func (g *Greeting) greetHour() (uint, string) {
 
 // greet by hour and minute
 func (g *Greeting) greet_H_M() (uint, uint, string) {
-	g.pHour = uint(time.Now().Hour())
-	g.pMinute = uint(time.Now().Minute())
-
 	switch {
 	case g.presentTime >= 6 || g.presentTime <= 9:
 		g.greeting = "good moring"
