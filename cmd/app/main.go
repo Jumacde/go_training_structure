@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	/*
 		cal := &Calc{}
@@ -39,8 +41,17 @@ func main() {
 	*/
 
 	// easy calc choosen by user
-	ec := &EasyCalc{}
-	ec.SetEasyCalc(24, 17, 0, 0, 0, 0, "")
-	ec.choiceCalc()
+	/*
+		ec := &EasyCalc{}
+		ec.SetEasyCalc(24, 17, 0, 0, 0, 0, "")
+		ec.choiceCalc()
+
+	*/
+	// create cards
+	plc := &CreateCard{}
+	plc.SetCreateCard(nil, nil, nil)
+	card := plc.exeCreateCard()
+	fmt.Println(card)
+	fmt.Println("\n", len(card))
 
 }
