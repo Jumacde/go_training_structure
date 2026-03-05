@@ -19,4 +19,11 @@ func main() {
 	formMod, x, y, modResult := cal.CalcMod()
 	fmt.Printf("\n%s %d mod %d = %d", formMod, x, y, modResult)
 
+	// greeting
+	gr := &Greeting{}
+	gr.SetGreeting(0, 0, 0, "")
+	// show greeting and current hour
+	fmt.Printf("\nit´s %d now. %s", gr.presentTime, gr.greeting)
+	// show greeting, current hour and minute
+	fmt.Printf("\nit´s %02d:%02d now. %s", gr.pHour, gr.pMinute, gr.greeting)
 }
