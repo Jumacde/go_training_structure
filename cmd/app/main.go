@@ -26,4 +26,16 @@ func main() {
 	fmt.Printf("\nit´s %d now. %s", gr.presentTime, gr.greeting)
 	// show greeting, current hour and minute
 	fmt.Printf("\nit´s %02d:%02d now. %s", gr.pHour, gr.pMinute, gr.greeting)
+
+	// input something
+	// input name
+	input := &InputSomething{}
+	input.SetInputSomething("", "")
+	input.enterName()
+	fmt.Printf("inputted name is %s", input.name)
+
+	// input number
+	input.enterNumber()
+	fmt.Printf("inputted number is %s", input.num)
+
 }
